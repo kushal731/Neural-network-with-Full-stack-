@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Image Project</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .image-container {
+            display: inline-block;
+            margin: 15px;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>AI Image Processing</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="image" accept="image/*" required>
+
+        <button type="submit">
+            Upload Image
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h2>Uploaded Images</h2>
+
+    {% for image in images %}
+
+        <div class="image-container">
+
+            <img src="{{ url_for('get_image', file_id=image.file_id) }}">
+
+            <p>{{ image.filename }}</p>
+
+        </div>
+
+    {% endfor %}
+
+</body>
+
+</html>

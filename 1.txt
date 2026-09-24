@@ -1,1 +1,1 @@
-hello kushal
+mongodb+srv://kushaltr21_db_user:<db_password>@aiprojectdb.tzwwtmt.mongodb.net/?appName=AIProjectDB
